@@ -3,19 +3,41 @@ package com.revature.model;
 public class Semester {
 	private int semesterId;
 	private String semesterName;
-	private String studentName;
-	private String departmentNam;
-	private String instructerName;
-	private String courseName;
-	public Semester(int semesterId, String semesterName, String studentName, String departmentNam,
-			String instructerName, String courseName) {
+	private Student student;
+	private Department department;
+	private Instructer instructer;
+	private Course course;
+	
+	public Semester(int semesterId, String semesterName) {
 		super();
 		this.semesterId = semesterId;
 		this.semesterName = semesterName;
-		this.studentName = studentName;
-		this.departmentNam = departmentNam;
-		this.instructerName = instructerName;
-		this.courseName = courseName;
+		
+	}
+	public Semester( String semesterName, Student student, Course course, Department department,Instructer instructer) {
+		super();
+		
+		this.semesterName = semesterName;
+		this.student = student;
+		this.course = course;
+		this.department = department;
+		this.instructer = instructer;
+	}
+	public Semester(int semesterId, String semesterName, Student student, Course course, Department department,Instructer instructer) {
+		super();
+		this.semesterId = semesterId;
+		this.semesterName = semesterName;
+		this.student = student;
+		this.course = course;
+		this.department = department;
+		this.instructer = instructer;
+	}
+	
+	public Instructer getInstructer() {
+		return instructer;
+	}
+	public void setInstructer(Instructer instructer) {
+		this.instructer = instructer;
 	}
 	public int getSemesterId() {
 		return semesterId;
@@ -29,29 +51,28 @@ public class Semester {
 	public void setSemesterName(String semesterName) {
 		this.semesterName = semesterName;
 	}
-	public String getStudentName() {
-		return studentName;
+	public Student getStudent() {
+		return student;
 	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setStudent(Student student) {
+		this.student = student;
 	}
-	public String getDepartmentNam() {
-		return departmentNam;
+	public Department getDepartment() {
+		return department;
 	}
-	public void setDepartmentNam(String departmentNam) {
-		this.departmentNam = departmentNam;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
-	public String getInstructerName() {
-		return instructerName;
+	
+	public Course getCourse() {
+		return course;
 	}
-	public void setInstructerName(String instructerName) {
-		this.instructerName = instructerName;
+	public void setCourse(Course course) {
+		this.course = course;
 	}
-	public String getCourseName() {
-		return courseName;
-	}
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
+	
+	
+	
+	
 
 }

@@ -10,6 +10,6 @@ public interface InstructerDao {
 	public Instructer findInstructerByName(String name);
 	public void insertInstructer(Instructer instructer);
 	public void deleteInstructer(Instructer instructer);
-	public void updateInstructer(Instructer instructer);
+	public void updateInstructer(Instructer instructer,String new_firstname);
 
 }

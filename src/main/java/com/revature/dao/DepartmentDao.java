@@ -11,6 +11,6 @@ public interface DepartmentDao {
 	public Department findDepartmentByName(String name);
 	public void insertDepartment(Department department);
 	public void deleteDepartment(Department department);
-	public void updateDepartment(Department department);
+	public void updateDepartment(Department department, String new_departmentname);
 
 }

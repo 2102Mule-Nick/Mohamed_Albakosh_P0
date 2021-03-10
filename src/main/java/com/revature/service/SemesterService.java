@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.revature.dao.SemesterDao;
 import com.revature.dao.SemesterDaoImpl;
+import com.revature.exceptions.PassAmountOfClassesForSemester;
 import com.revature.model.Semester;
 
 public class SemesterService {
@@ -33,7 +34,7 @@ public class SemesterService {
 	}
 
 	
-	public void insertSemester(Semester semester) {
+	public void insertSemester(Semester semester) throws PassAmountOfClassesForSemester {
 		
 		this.semesterDao.insertSemester(semester);
 		

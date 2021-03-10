@@ -4,8 +4,8 @@ public class Student {
 	private int studentId;
 	private String firstName;
 	private String lastName;
-	private Course course;
-	private Instructer instructer;
+	private Department department;
+	private User user;
 	
 	public Student(int studentId, String firstName, String lastName) {
 		super();
@@ -14,14 +14,23 @@ public class Student {
 		this.lastName = lastName;	
 	}
 	
-	public Student(int studentId, String firstName, String lastName,Course course,Instructer instructer) {
+	public Student(int studentId, String firstName, String lastName,Department department,User user) {
 		super();
 		this.studentId = studentId;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.course = course;
-		this.instructer = instructer;
+		this.department = department;
+		this.user =user;
+		
 	}
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
 	public int getStudentId() {
 		return studentId;
 	}
@@ -40,19 +49,17 @@ public class Student {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Course getCourse() {
-		return course;
-	}
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-	public Instructer getInstructer() {
-		return instructer;
-	}
-	public void setInstructer(Instructer instructer) {
-		this.instructer = instructer;
-	}
 	
+	
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + studentId + ", FirstName=" +firstName + ",LastName="+ lastName +"]";

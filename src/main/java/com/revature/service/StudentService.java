@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.revature.dao.StudentDao;
 import com.revature.dao.StudentDaoImpl;
+import com.revature.exceptions.StudentNotFound;
 import com.revature.model.Student;
 
 public class StudentService {
@@ -26,7 +27,7 @@ public class StudentService {
 	}
 
 	
-	public Student findStudentByName(String name) {
+	public Student findStudentByName(String name) throws StudentNotFound {
 		
 		return this.studentDao.findStudentByName(name);
 	}

@@ -6,9 +6,12 @@ package com.revature.junit;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
+import com.revature.exceptions.PassAmountOfClassesForSemester;
 import com.revature.model.Course;
 import com.revature.model.Department;
 import com.revature.model.Instructer;
@@ -37,6 +40,11 @@ public class RegistrationForSemesterTest {
 	private DepartmentService  departmentService;
 	
 	private static RegistrationForSemesterImpl service;
+	@BeforeEach 
+	public UpDate () {
+		
+	//}
+		
 	@Test
 	public void SemesterRegistration() {
 		student = new Student(1,"Mohamed","Albakosh");
@@ -53,7 +61,7 @@ public class RegistrationForSemesterTest {
 		departmentService.insertDepartment(department);
 		//studentService = new StudentService();
 		service = new RegistrationForSemesterImpl();
-		service.RegisterStusent(1,"Samar", student, department, instructer, course);
+		assertThrows(PassAmountOfClassesForSemester.class, () -> {service.RegisterStusent(1,"Samar", student, department, instructer, course);});
 		
 		int totalofstudent=service.TotalOfStudentInSemester();
 		
